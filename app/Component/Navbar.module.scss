@@ -1,0 +1,62 @@
+.Navbar {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  margin: 24px;
+  padding: 0 0 16px 0;
+  border-bottom: #8a8e93 solid 1px;
+}
+
+.centerNavElements {
+  display: flex;
+}
+
+.centerNavElements a {
+  color: black;
+  overflow: hidden;
+  padding: 0 16px;
+  text-decoration: none;
+  position: relative; /* Add this line */
+  font-weight: 500; /* Adjust font-weight as needed */
+}
+
+.centerNavElements a:hover {
+  color: #000;
+}
+
+.centerNavElements a::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+.centerNavElements a:hover::before {
+  transform: scaleX(1);
+}
+
+.Logo {
+  color: black;
+  margin-right: auto;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.Cart {
+  color: black;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.Cart:hover {
+  transform: scale(1.5);
+}

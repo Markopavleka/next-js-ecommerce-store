@@ -1,0 +1,39 @@
+.FooterBody {
+  background-color: #000;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  border-top: #8a8e93 solid 2px;
+  height: 20vh;
+}
+
+.FooterBody p {
+  line-height: 2.5;
+}
+
+.FooterBody input[type='email'] {
+  border: 1px solid #fff;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #000;
+  margin-right: 4px;
+}
+
+.FooterBody button {
+  background-color: #000;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #fff;
+}
+
+.FooterBody button:hover {
+  background-color: #8a8e93;
+}

@@ -1,0 +1,47 @@
+.shopPageBody {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 100vw;
+  gap: 16px;
+}
+
+.shopItem {
+  text-align: center;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shopItem a {
+  text-decoration: none;
+  color: #333;
+}
+
+.shopItem h1 {
+  font-size: 1.5rem;
+  margin: 8px 0;
+}
+
+.shopItem p {
+  margin: 8px 0;
+}
+
+.shopItem .next-image {
+  border-radius: 4px;
+}
+
+.shopItem:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shopImage {
+  width: 200px;
+  height: 200px;
+}
