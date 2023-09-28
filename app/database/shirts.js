@@ -5,7 +5,7 @@ export const shirts = [
     description: 'Mini Logo White',
     price: 48,
     currency: '€',
-    quantity: 1,
+
     size: 'XL',
   },
   {
@@ -14,7 +14,7 @@ export const shirts = [
     description: 'Mini Logo Black',
     price: 36,
     currency: '€',
-    quantity: 1,
+
     size: 'XL',
   },
   {
@@ -23,7 +23,7 @@ export const shirts = [
     description: 'Mini Logo Purple',
     price: 40,
     currency: '€',
-    quantity: 1,
+
     size: 'XL',
   },
   {
@@ -32,7 +32,6 @@ export const shirts = [
     description: 'Logo White',
     price: 35,
     currency: '€',
-    quantity: 1,
     size: 'XL',
   },
   {
@@ -41,7 +40,6 @@ export const shirts = [
     description: 'Logo Black',
     price: 48,
     currency: '€',
-    quantity: 1,
     size: 'XL',
   },
   {
@@ -50,7 +48,7 @@ export const shirts = [
     description: 'Logo Purple',
     price: 30,
     currency: '€',
-    quantity: 1,
+
     size: 'XL',
   },
 ];

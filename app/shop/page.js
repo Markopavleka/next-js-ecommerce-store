@@ -1,12 +1,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { shirts } from '../database/shirts';
+import { getCookie } from '../util/cookies';
+import { parseJson } from '../util/json';
 import style from './page.module.scss';
 
 export default function Shop() {
+  const shirtItemCookie = getCookie('shirtQuantity');
+
+  const shirtQuantity = !shirtItemCookie ? [] : parseJson(shirtItemCookie);
+
+  console.log(shirtQuantity);
+
+  const shirtsWithQuantity = shirts.map((shirt) => {
+    const matchingShirtsWithQuantityFromCookie = shirtQuantity.find(
+      (shirtItem) => shirt.id === shirtItem.id,
+    );
+    return {
+      ...shirt,
+      quantity: matchingShirtsWithQuantityFromCookie?.quantity,
+    };
+  });
   return (
     <div className={style.shopPageBody}>
-      {shirts.map((shirt) => {
+      {shirtsWithQuantity.map((shirt) => {
         return (
           <div key={`shirt-${shirt.id}`} className={style.shopItem}>
             <Link

@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
+import { createOrUpdateItem } from './actions.js';
 
-export default function AddToCartButton() {
-  const [quantity, setQuantity] = useState('');
-  // const [cart, setCart] = useState();
+export default function AddToCartButton(props) {
+  const [quantity, setQuantity] = useState('1');
   return (
     <div>
       <div>AddToCartButton</div>
@@ -16,7 +16,13 @@ export default function AddToCartButton() {
           setQuantity(event.currentTarget.value);
         }}
       />
-      <button>Add to Cart</button>
+      <button
+        onClick={async () => {
+          await createOrUpdateItem(props.shirtId, quantity);
+        }}
+      >
+        Add to Cart
+      </button>
     </div>
   );
 }
