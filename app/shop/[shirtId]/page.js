@@ -1,9 +1,11 @@
 import Image from 'next/image';
+import AddToCartButton from '../../Component/AddToCartButton';
 import { getShirtById } from '../../database/shirts';
 import style from './page.module.scss';
 
 export default function SingleShirtPage(props) {
-  const singleShirt = getShirtById(props.params.shirtId);
+  const singleShirt = getShirtById(Number(props.params.shirtId));
+  console.log(singleShirt);
 
   return (
     <div className={style.singleShirtBody}>
@@ -19,8 +21,7 @@ export default function SingleShirtPage(props) {
       <p data-test-id="product-price">
         {singleShirt.price} {singleShirt.currency}
       </p>
-      <p>Quantity:{singleShirt.quantity} </p>
-      <p>Size:{singleShirt.size}</p>
+      <AddToCartButton />
     </div>
   );
 }
