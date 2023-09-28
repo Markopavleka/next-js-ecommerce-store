@@ -58,6 +58,6 @@ export function getShirts() {
   return shirts;
 }
 
-export function getShirtByName(name) {
-  return shirts.find((shirt) => shirt.name === name);
+export function getShirtById(id) {
+  return shirts.find((shirt) => shirt.id === id);
 }

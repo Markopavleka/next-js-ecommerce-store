@@ -8,8 +8,11 @@ export default function Shop() {
     <div className={style.shopPageBody}>
       {shirts.map((shirt) => {
         return (
-          <div key={`shirt-${shirt.name}`} className={style.shopItem}>
-            <Link href={`/shop/${shirt.name}`}>
+          <div key={`shirt-${shirt.id}`} className={style.shopItem}>
+            <Link
+              href={`/shop/${shirt.id}`}
+              data-test-id="product-<product id>"
+            >
               <Image
                 src={`/images/${shirt.name}.jpeg`}
                 alt={shirt.description}
@@ -20,7 +23,7 @@ export default function Shop() {
               <h1>{shirt.description}</h1>
             </Link>
             <p>
-              {shirt.price} {shirt.currency} Quantity: {shirt.quantity}
+              {shirt.price} {shirt.currency}
             </p>
           </div>
         );
