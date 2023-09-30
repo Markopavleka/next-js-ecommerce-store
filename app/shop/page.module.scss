@@ -12,7 +12,7 @@
   text-align: center;
   padding: 16px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 16px;
   margin: 8px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -33,11 +33,12 @@
 }
 
 .shopItem .next-image {
-  border-radius: 4px;
+  border-radius: 16px;
 }
 
 .shopItem:hover {
-  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.001);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 

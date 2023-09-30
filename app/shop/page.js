@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { shirts } from '../database/shirts';
+import { getShirts } from '../database/shirts';
 import { getCookie } from '../util/cookies';
 import { parseJson } from '../util/json';
 import style from './page.module.scss';
 
-export default function Shop() {
+export default async function Shop() {
+  const shirts = await getShirts();
   const shirtItemCookie = getCookie('shirtQuantity');
 
   const shirtQuantity = !shirtItemCookie ? [] : parseJson(shirtItemCookie);
@@ -39,9 +40,7 @@ export default function Shop() {
               />
               <h1>{shirt.description}</h1>
             </Link>
-            <p>
-              {shirt.price} {shirt.currency}
-            </p>
+            <p>{shirt.price} €</p>
           </div>
         );
       })}

@@ -3,8 +3,8 @@ import { getShirtById } from '../../database/shirts';
 import AddToCartButton from './AddToCartButton';
 import styles from './page.module.scss';
 
-export default function SingleShirtPage(props) {
-  const singleShirt = getShirtById(Number(props.params.shirtId));
+export default async function SingleShirtPage(props) {
+  const singleShirt = await getShirtById(Number(props.params.shirtId));
   console.log(props.params.shirtId);
   return (
     <div className={styles.singleShirtBody}>

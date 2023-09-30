@@ -1,12 +1,12 @@
 'use client';
 import { useState } from 'react';
 import { createOrUpdateItem } from './actions.js';
+import style from './AddToCartButton.module.scss';
 
 export default function AddToCartButton(props) {
-  const [quantity, setQuantity] = useState('1');
+  const [quantity, setQuantity] = useState('');
   return (
     <div>
-      <div>AddToCartButton</div>
       <p>Quantity:</p>
       <input
         type="number"
@@ -16,7 +16,9 @@ export default function AddToCartButton(props) {
           setQuantity(event.currentTarget.value);
         }}
       />
+      <br />
       <button
+        className={style['button-11']}
         onClick={async () => {
           await createOrUpdateItem(props.shirtId, quantity);
         }}
