@@ -16,7 +16,7 @@ const shirts = [
   {
     id: 3,
     name: 'miniLogoPurple',
-    description: 'Mini Logo White',
+    description: 'Mini Logo Purple',
     price: 40,
   },
   {
@@ -33,8 +33,8 @@ const shirts = [
   },
   {
     id: 6,
-    name: 'miniLogoPurple',
-    description: 'Mini Logo Purple',
+    name: 'LogoPurple',
+    description: 'Logo Purple',
     price: 30,
   },
 ];

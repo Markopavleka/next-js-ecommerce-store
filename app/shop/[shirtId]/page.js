@@ -5,7 +5,7 @@ import styles from './page.module.scss';
 
 export default async function SingleShirtPage(props) {
   const singleShirt = await getShirtById(Number(props.params.shirtId));
-  console.log(props.params.shirtId);
+
   return (
     <div className={styles.singleShirtBody}>
       <Image

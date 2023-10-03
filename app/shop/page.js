@@ -11,8 +11,6 @@ export default async function Shop() {
 
   const shirtQuantity = !shirtItemCookie ? [] : parseJson(shirtItemCookie);
 
-  console.log(shirtQuantity);
-
   const shirtsWithQuantity = shirts.map((shirt) => {
     const matchingShirtsWithQuantityFromCookie = shirtQuantity.find(
       (shirtItem) => shirt.id === shirtItem.id,

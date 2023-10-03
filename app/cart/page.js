@@ -4,7 +4,7 @@ import { parseJson } from '../../public/util/json';
 import { getShirts } from '../database/shirts';
 import style from './page.module.scss';
 
-export default async function cart() {
+export default async function cartFunction() {
   const shirtItemCookie = getCookie('shirtQuantity');
   const shirtsQuantity = !shirtItemCookie ? [] : parseJson(shirtItemCookie);
   const shirts = await getShirts();
@@ -20,6 +20,16 @@ export default async function cart() {
     return shirtInCart.quantity >= 1;
   });
 
+  const totalPrice = shirtsWithQuantity.reduce((sum, shirt) => {
+    const itemTotal = parseFloat(shirt.price * shirt.quantity);
+    sum += itemTotal;
+    return sum;
+  }, 0);
+
+  const priceWithoutTaxes = (totalPrice / 1.2).toFixed(2);
+  const tax = (totalPrice - priceWithoutTaxes).toFixed(2);
+
+  console.log(shirts);
   return (
     <div className={style.cartBody}>
       {shirtsWithQuantity.map((shirt) => {
@@ -36,7 +46,9 @@ export default async function cart() {
           </div>
         );
       })}
-
+      <p>Price without Taxes: {priceWithoutTaxes} €</p>
+      <p>Tax: {tax} €</p>
+      <p>Total price: {totalPrice} €</p>
       <Link href="/checkout" className={style.checkoutLink}>
         Checkout
       </Link>

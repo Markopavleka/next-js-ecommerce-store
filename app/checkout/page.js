@@ -1,7 +1,6 @@
 // A Checkout page which shows the total and asks for shipping and payment information
 
 // The form should prevent submission with any of the above fields being empty
-// The Confirm Order button needs to have the HTML attribute data-test-id="checkout-confirm-order"
 // Privacy: don't save user information (payment or other personal information) anywhere (unless you have a privacy policy and are creating a real ecommerce store)
 //  Clicking on the Confirm Order button should empty the cart and navigate to the Thank You page
 
@@ -77,7 +76,12 @@ export default function Checkout() {
         maxLength={3}
         required
       />
-      <button className={style.submitButton}>Submit</button>
+      <button
+        data-test-id="checkout-confirm-order"
+        className={style.submitButton}
+      >
+        order now
+      </button>
     </div>
   );
 }
