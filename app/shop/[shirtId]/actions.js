@@ -5,8 +5,8 @@
 // Case C: cookie is defined but doesn't have the fruit id
 
 import { cookies } from 'next/headers';
-import { getCookie } from '../../util/cookies';
-import { parseJson } from '../../util/json';
+import { getCookie } from '../../../public/util/cookies';
+import { parseJson } from '../../../public/util/json';
 
 export async function createOrUpdateItem(shirtId, quantity) {
   // 1. get the current cookie

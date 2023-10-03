@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { getCookie } from '../../public/util/cookies';
+import { parseJson } from '../../public/util/json';
 import { getShirts } from '../database/shirts';
-import { getCookie } from '../util/cookies';
-import { parseJson } from '../util/json';
 import style from './page.module.scss';
 
 export default async function Shop() {

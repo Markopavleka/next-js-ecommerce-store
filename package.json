@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "ley --require tsm"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
+    "ley": "^0.8.1",
     "next": "latest",
     "postgres": "^3.3.5",
     "react": "latest",
@@ -28,6 +30,7 @@
     "libpg-query": "^15.0.2",
     "stylelint": "^15.10.3",
     "stylelint-config-upleveled": "^1.0.2",
+    "tsm": "^2.3.0",
     "typescript": "^5.2.2"
   }
 }

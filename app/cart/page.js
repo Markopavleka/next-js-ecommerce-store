@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import { getCookie } from '../../public/util/cookies';
+import { parseJson } from '../../public/util/json';
 import { getShirts } from '../database/shirts';
-import { getCookie } from '../util/cookies';
-import { parseJson } from '../util/json';
+import style from './page.module.scss';
 
 export default async function cart() {
   const shirtItemCookie = getCookie('shirtQuantity');
@@ -20,21 +21,25 @@ export default async function cart() {
   });
 
   return (
-    <div>
+    <div className={style.cartBody}>
       {shirtsWithQuantity.map((shirt) => {
         return (
-          <div key={`shirt-${shirt.id}`}>
-            <h3>{shirt.description}</h3>
-            <p>Quantity: {shirt.quantity}</p>
-            <p>
+          <div key={`shirt-${shirt.id}`} className={style.cartItem}>
+            <h3 className={style.itemDescription}>{shirt.description}</h3>
+            <p className={style.itemQuantity}>Quantity: {shirt.quantity}</p>
+            <p className={style.itemPrice}>
               Price: {shirt.price} {shirt.currency}
             </p>
-            <p>Subtotal Price: {shirt.price * shirt.quantity} €</p>
+            <p className={style.itemSubtotal}>
+              Subtotal Price: {shirt.price * shirt.quantity} €
+            </p>
           </div>
         );
       })}
 
-      <Link href="/checkout">Checkout</Link>
+      <Link href="/checkout" className={style.checkoutLink}>
+        Checkout
+      </Link>
     </div>
   );
 }
