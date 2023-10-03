@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Cart from '../../public/images/cart.png';
+import DarkMode from './DarkMode';
 import style from './Navbar.module.scss';
 
 export default function Navbar() {
@@ -14,6 +15,7 @@ export default function Navbar() {
         <Link href="/shop">Shop</Link>
         <Link href="/about">About</Link>
       </div>
+      <DarkMode />
       <div className={style.Cart}>
         <a href="/cart">
           <Image src={Cart} alt="Cart" width={40} height={40} />

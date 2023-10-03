@@ -5,7 +5,6 @@
 // Privacy: don't save user information (payment or other personal information) anywhere (unless you have a privacy policy and are creating a real ecommerce store)
 //  Clicking on the Confirm Order button should empty the cart and navigate to the Thank You page
 
-import React from 'react';
 import style from './page.module.scss';
 
 export default function Checkout() {
@@ -13,32 +12,32 @@ export default function Checkout() {
     <div className={style.checkoutContainer}>
       <input
         className={style.inputField}
-        placeholder="First Name"
+        placeholder="first name"
         data-test-id="checkout-first-name"
         required
       />
       <input
         className={style.inputField}
-        placeholder="Last Name"
+        placeholder="last name"
         data-test-id="checkout-last-name"
         required
       />
       <input
         className={style.inputField}
         type="email"
-        placeholder="E-mail"
+        placeholder="e-mail"
         data-test-id="checkout-email"
         required
       />
       <input
         className={style.inputField}
-        placeholder="Address"
+        placeholder="address"
         data-test-id="checkout-address"
         required
       />
       <input
         className={style.inputField}
-        placeholder="City"
+        placeholder="city"
         data-test-id="checkout-city"
         required
       />
@@ -52,27 +51,27 @@ export default function Checkout() {
       />
       <input
         className={style.inputField}
-        placeholder="Country"
+        placeholder="country"
         data-test-id="checkout-country"
         required
       />
       <input
         className={style.inputField}
         type="date"
-        placeholder="Expiration Date"
+        placeholder="expiration date"
         data-test-id="checkout-credit-card"
         required
       />
       <input
         className={style.inputField}
-        placeholder="Credit Card"
+        placeholder="credit card"
         data-test-id="checkout-expiration-date"
         type="number"
         required
       />
       <input
         className={style.inputField}
-        placeholder="CVC"
+        placeholder="cvc"
         data-test-id="checkout-security-code"
         type="number"
         maxLength={3}

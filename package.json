@@ -13,6 +13,7 @@
     "dotenv": "^16.3.1",
     "ley": "^0.8.1",
     "next": "latest",
+    "next-themes": "^0.2.1",
     "postgres": "^3.3.5",
     "react": "latest",
     "react-dom": "latest",

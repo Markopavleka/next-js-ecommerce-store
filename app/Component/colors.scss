@@ -1,0 +1,12 @@
+:root {
+  --background-white: #f0f0f0;
+  --foreground-white: #202020;
+
+  --background-black: #202020;
+  --foreground-black: #f0f0f0;
+}
+
+[data-theme='dark'] {
+  --background: var(--background-black);
+  --foreground: var(--foreground-black);
+}

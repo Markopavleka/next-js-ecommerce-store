@@ -1,7 +1,9 @@
 import './globals.scss';
+import './Component/colors.scss';
 import { Inter } from 'next/font/google';
 import Footer from './Component/Footer';
 import Navbar from './Component/Navbar';
+import { Providers } from './Component/Providers';
 
 // import styles from './page.module.scss';
 
@@ -16,9 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <div className="herosection">{children}</div>
-        <Footer />
+        <Providers>
+          <Navbar />
+          <div className="herosection">{children}</div>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
