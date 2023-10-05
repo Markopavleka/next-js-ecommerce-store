@@ -1,14 +1,12 @@
-'use client'; // Add 'use client' at the top
-
+'use client';
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
-import style from './DarkMode.module.scss'; // Import your SCSS stylesheet
+import React, { useEffect, useState } from 'react';
+import style from './DarkMode.module.scss';
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
-  // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -18,21 +16,13 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <div className={style.themeSwitchContainer}>
-      <label htmlFor="theme" className={style.theme}>
-        <span className="theme__toggle-wrap">
-          <input
-            type="checkbox"
-            id="theme"
-            role="switch"
-            name="theme"
-            onClick={() =>
-              setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
-            }
-          />
-        </span>
-        <span>{resolvedTheme}</span>
-      </label>
+    <div>
+      <button
+        className={style.button}
+        onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+      >
+        {resolvedTheme}
+      </button>
     </div>
   );
 }

@@ -17,8 +17,8 @@
   overflow: hidden;
   padding: 0 16px;
   text-decoration: none;
-  position: relative; /* Add this line */
-  font-weight: 500; /* Adjust font-weight as needed */
+  position: relative;
+  font-weight: 500;
 }
 
 .centerNavElements a:hover {
@@ -47,10 +47,14 @@
   text-decoration: none;
   font-weight: 700;
 }
+.centerNavElements .DarkModeButton {
+  display: flex;
+  align-items: end;
+}
 
 .Cart {
   color: var(--foreground);
-  margin-left: auto;
+  margin-left: 100px;
   display: flex;
   align-items: center;
   transition: all 0.2s ease-in-out;
@@ -62,10 +66,14 @@
 
 .quantity {
   background-color: rgb(197, 0, 0);
-  color: var(--background-white);
+  color: #fff;
   font-size: 16px;
   border-radius: 100%;
   height: 20px;
   width: 20px;
   text-align: center;
+}
+
+.DarkModeButton {
+  margin-left: auto;
 }

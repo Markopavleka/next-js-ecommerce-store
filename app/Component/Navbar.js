@@ -40,14 +40,17 @@ export default async function Navbar() {
         <Link href="/shop">Shop</Link>
         <Link href="/about">About</Link>
       </div>
-      <DarkMode />
+
+      <div className={style.DarkModeButton}>
+        <DarkMode />
+      </div>
       <div className={style.Cart}>
+        <Link href="/cart">
+          <Image src={Cart} alt="Cart" width={40} height={40} />
+        </Link>
         <div className={style.quantity}>
           <p>{quantity}</p>
         </div>
-        <a href="/cart">
-          <Image src={Cart} alt="Cart" width={40} height={40} />
-        </a>
       </div>
     </div>
   );
