@@ -20,7 +20,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Providers>
           <Navbar />
+
           <div className="herosection">{children}</div>
+
           <Footer />
         </Providers>
       </body>

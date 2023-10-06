@@ -1,6 +1,6 @@
-import { getCookie } from '../../public/util/cookies';
-import { parseJson } from '../../public/util/json';
-import { getShirts } from '../database/shirts';
+import { getShirts } from '../../app/database/shirts';
+import { getCookie } from './cookies';
+import { parseJson } from './json';
 
 const shirtItemCookie = getCookie('shirtQuantity');
 const shirtsQuantity = !shirtItemCookie ? [] : parseJson(shirtItemCookie);

@@ -4,11 +4,29 @@
 //  Clicking on the Confirm Order button should empty the cart and navigate to the Thank You page
 
 import Link from 'next/link';
-import { allShirts } from '../cart/CartUtil';
+import { getCookie } from '../../public/util/cookies';
+import { parseJson } from '../../public/util/json';
+import { getShirts } from '../database/shirts';
 import DeleteButton from './DeleteButton';
 import style from './page.module.scss';
 
-export default function Checkout() {
+export default async function Checkout() {
+  const shirtItemCookie = getCookie('shirtQuantity');
+  const shirtsQuantity = !shirtItemCookie ? [] : parseJson(shirtItemCookie);
+
+  const shirts = await getShirts();
+
+  const shirtsInCart = shirts.map((shirt) => {
+    const matchingShirtsFromCookie = shirtsQuantity.find(
+      (shirtQuantity) => shirt.id === shirtQuantity.id,
+    );
+    return { ...shirt, quantity: matchingShirtsFromCookie?.quantity };
+  });
+
+  const allShirts = shirtsInCart.filter((shirtInCart) => {
+    return shirtInCart.quantity >= 1;
+  });
+
   const totalPrice = allShirts.reduce((sum, shirt) => {
     const itemTotal = parseFloat(shirt.price * shirt.quantity);
     sum += itemTotal;
@@ -16,10 +34,9 @@ export default function Checkout() {
   }, 0);
   const priceWithoutTaxes = (totalPrice / 1.2).toFixed(2);
   const tax = (totalPrice - priceWithoutTaxes).toFixed(2);
-
   return (
     <div className={style.checkoutContainer}>
-      <p>Price without Taxes: {priceWithoutTaxes} €</p>
+      <p>Price without Tax: {priceWithoutTaxes} €</p>
       <p>Tax: {tax} €</p>
       <p>Total price: {totalPrice} €</p>
       <input

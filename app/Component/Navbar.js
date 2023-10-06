@@ -28,8 +28,6 @@ export default async function Navbar() {
     return acc;
   }, 0);
 
-  console.log(quantity);
-
   return (
     <div className={style.Navbar}>
       <a className={style.Logo} href="/">
