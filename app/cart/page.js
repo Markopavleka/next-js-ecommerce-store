@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { getShirts } from '../../database/shirts';
 import { getCookie } from '../../public/util/cookies';
 import { parseJson } from '../../public/util/json';
-import DeleteButton from './DeleteButton';
+// import DeleteButton from './DeleteButton';
 import style from './page.module.scss';
 
 export default async function Cart() {
@@ -57,7 +57,6 @@ export default async function Cart() {
               <p className={style.itemSubtotal}>
                 Subtotal Price: {shirt.price * shirt.quantity} €
               </p>
-              <DeleteButton />
             </div>
           );
         })}

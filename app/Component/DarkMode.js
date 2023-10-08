@@ -1,7 +1,6 @@
 'use client';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
-import style from './DarkMode.module.scss';
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
@@ -17,12 +16,11 @@ export default function ThemeSwitch() {
 
   return (
     <div>
-      <button
-        className={style.button}
+      <input
+        type="checkbox"
+        className="toggle toggle-accent"
         onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
-      >
-        {resolvedTheme}
-      </button>
+      />
     </div>
   );
 }

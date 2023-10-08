@@ -1,22 +1,17 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
-    <footer className="footer p-10 bg-base-300 text-base-content">
-      <nav>
-        <header className="footer-title">Services</header>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
-        <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
-      </nav>
-      <nav>
-        <header className="footer-title">Company</header>
-        <a className="link link-hover">About us</a>
+    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+      <nav className="grid grid-flow-col gap-4">
+        <Link href="/about" className="link link-hover">
+          About us
+        </Link>
         <a className="link link-hover">Contact</a>
         <a className="link link-hover">Jobs</a>
         <a className="link link-hover">Press kit</a>
       </nav>
       <nav>
-        <header className="footer-title">Social</header>
         <div className="grid grid-flow-col gap-4">
           <a>
             <svg
@@ -53,6 +48,9 @@ export default function Footer() {
           </a>
         </div>
       </nav>
+      <aside>
+        <p>Copyright © 2023 - All right reserved by 三刀流 Industries.</p>
+      </aside>
     </footer>
   );
 }

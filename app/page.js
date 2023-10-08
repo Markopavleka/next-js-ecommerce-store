@@ -10,7 +10,7 @@ export default function Home() {
           content="Welcome to our website. Discover amazing products, services, and more."
         />
       </Head>
-      <div className="text-3xl font-bold underline">Main content soon</div>;
+      <div className="text-3xl font-bold underline" />
     </div>
   );
 }
