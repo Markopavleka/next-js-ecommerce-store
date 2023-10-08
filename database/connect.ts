@@ -1,7 +1,7 @@
 import 'server-only';
 import { headers } from 'next/headers';
 import postgres, { Sql } from 'postgres';
-import { setEnvironmentVariables } from '../../public/util/config.mjs';
+import { setEnvironmentVariables } from '../public/util/config.mjs';
 
 setEnvironmentVariables();
 

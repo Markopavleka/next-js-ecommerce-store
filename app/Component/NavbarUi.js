@@ -1,9 +1,9 @@
 // import Image from 'next/image';
 import Link from 'next/link';
+import { getShirts } from '../../database/shirts';
 // import Cart from '../../public/images/cart.png';
 import { getCookie } from '../../public/util/cookies';
 import { parseJson } from '../../public/util/json';
-import { getShirts } from '../database/shirts';
 import DarkMode from './DarkMode';
 
 // import style from './Navbar.module.scss';

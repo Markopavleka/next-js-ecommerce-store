@@ -1,29 +1,32 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { getShirts } from '../../database/shirts';
 import Cart from '../../public/images/cart.png';
 import { getCookie } from '../../public/util/cookies';
 import { parseJson } from '../../public/util/json';
-import { getShirts } from '../database/shirts';
 import DarkMode from './DarkMode';
 import style from './Navbar.module.scss';
 
 export default async function Navbar() {
-  const shirtItemCookie = getCookie('shirtQuantity');
-  const shirtsQuantity = !shirtItemCookie ? [] : parseJson(shirtItemCookie);
-  const shirts = await getShirts();
+  const cartItemsCookie = getCookie('shirtQuantity');
+  const cartItemQuantities = !cartItemsCookie ? [] : parseJson(cartItemsCookie);
 
-  const shirtsInCart = shirts.map((shirt) => {
-    const matchingShirtsFromCookie = shirtsQuantity.find(
+  const shirtList = await getShirts();
+
+  const cartItemsWithQuantities = shirtList.map((shirt) => {
+    const matchingShirtsFromCookie = cartItemQuantities.find(
       (shirtQuantity) => shirt.id === shirtQuantity.id,
     );
     return { ...shirt, quantity: matchingShirtsFromCookie?.quantity };
   });
 
-  const shirtsWithQuantity = shirtsInCart.filter((shirtInCart) => {
-    return shirtInCart.quantity >= 1;
-  });
+  const cartItemsWithQuantityGreaterThanOne = cartItemsWithQuantities.filter(
+    (shirtInCart) => {
+      return shirtInCart.quantity >= 1;
+    },
+  );
 
-  const quantity = shirtsWithQuantity.reduce((acc, shirt) => {
+  const quantity = cartItemsWithQuantityGreaterThanOne.reduce((acc, shirt) => {
     acc += Number(shirt.quantity);
     return acc;
   }, 0);
