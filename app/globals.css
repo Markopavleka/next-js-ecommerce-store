@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.herosection {
-  height: 100vh;
+.background-image {
+  background-image: url('../public/images/tokio.jpeg');
+  background-size: cover;
+  background-position: center;
 }

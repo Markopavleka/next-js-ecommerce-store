@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <NavbarUi />
 
-          <div className="herosection">{children}</div>
+          <div>{children}</div>
 
           <FooterUi />
         </Providers>

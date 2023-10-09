@@ -1,15 +1,11 @@
-// import Image from 'next/image';
 import Link from 'next/link';
 import { getShirts } from '../../database/shirts';
-// import Cart from '../../public/images/cart.png';
 import { getCookie } from '../../public/util/cookies';
 import { parseJson } from '../../public/util/json';
 import DarkMode from './DarkMode';
 
-// import style from './Navbar.module.scss';
-
 export default async function Navbar() {
-  const cartItemsCookie = getCookie('shirtQuantity');
+  const cartItemsCookie = getCookie('cart');
   const cartItemQuantities = !cartItemsCookie ? [] : parseJson(cartItemsCookie);
 
   const shirtList = await getShirts();
@@ -41,13 +37,13 @@ export default async function Navbar() {
   );
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 mb-10 mt-5">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown ml-2">
           <button tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-7 w-7"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -60,7 +56,7 @@ export default async function Navbar() {
               />
             </svg>
           </button>
-          <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <ul className="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             <li>
               <Link href="/" tabIndex={0}>
                 Home
@@ -88,15 +84,15 @@ export default async function Navbar() {
           三刀流
         </Link>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end mr-2">
         <DarkMode />
         <div className="flex-none">
           <div className="dropdown dropdown-end">
-            <button tabIndex={0} className="btn btn-ghost btn-circle">
+            <button tabIndex={0} className="btn btn-ghost btn-circle ml-2">
               <div className="indicator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="h-7 w-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

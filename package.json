@@ -18,12 +18,14 @@
     "postgres": "^3.3.5",
     "react": "latest",
     "react-dom": "latest",
+    "react-type-animation": "^3.1.0",
     "sass": "^1.68.0",
     "secure-json-parse": "^2.7.0",
     "server-only": "^0.0.1",
     "sharp": "^0.32.6"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@ts-safeql/eslint-plugin": "^2.0.3",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",

@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { getShirts } from '../../database/shirts';
 import { getCookie } from '../../public/util/cookies';
 import { parseJson } from '../../public/util/json';
-import style from './page.module.scss';
 
 export default async function Shop() {
   const shirts = await getShirts();
@@ -22,7 +21,7 @@ export default async function Shop() {
     };
   });
   return (
-    <div>
+    <div className="grid justify-center items-center mb-24">
       <Head>
         <title>三刀流 || Shop</title>
         <meta
@@ -31,24 +30,32 @@ export default async function Shop() {
         />
       </Head>
 
-      <div className={style.shopPageBody}>
+      <div className="grid grid-cols-3 grid-rows-2 gap-20 ">
         {shirtsWithQuantity.map((shirt) => {
           return (
-            <div key={`shirt-${shirt.id}`} className={style.shopItem}>
+            <div
+              key={`shirt-${shirt.id}`}
+              className="card w-96 glass overflow-hidden"
+            >
               <Link
                 href={`/shop/${shirt.id}`}
-                data-test-id="product-<product id>"
+                data-test-id={`product-${shirt.id}`}
               >
-                <Image
-                  src={`/images/${shirt.name}.jpeg`}
-                  alt={shirt.description}
-                  width={100}
-                  height={100}
-                  className={style.shopImage}
-                />
-                <h1>{shirt.description}</h1>
+                <figure>
+                  <Image
+                    src={`/images/${shirt.name}.jpeg`}
+                    alt={shirt.description}
+                    width={384}
+                    height={226}
+                  />
+                </figure>
+                <div className="card-body">
+                  <h1 className="card-actions card-title justify-center">
+                    {shirt.description}
+                  </h1>
+                </div>
+                <p className="card-actions justify-center">{shirt.price} €</p>
               </Link>
-              <p>{shirt.price} €</p>
             </div>
           );
         })}

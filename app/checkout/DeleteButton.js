@@ -8,7 +8,9 @@ export default function deleteButton() {
   };
   return (
     <div>
-      <button onClick={handleDeleteCookies}>order now</button>
+      <button className="btn btn-primary" onClick={handleDeleteCookies}>
+        order now
+      </button>
     </div>
   );
 }

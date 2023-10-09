@@ -9,10 +9,9 @@ import { getShirts } from '../../database/shirts';
 import { getCookie } from '../../public/util/cookies';
 import { parseJson } from '../../public/util/json';
 import DeleteButton from './DeleteButton';
-import style from './page.module.scss';
 
 export default async function Checkout() {
-  const cartItemsCookie = getCookie('shirtQuantity');
+  const cartItemsCookie = getCookie('cart');
   const cartItemQuantities = !cartItemsCookie ? [] : parseJson(cartItemsCookie);
 
   const shirtList = await getShirts();
@@ -41,7 +40,7 @@ export default async function Checkout() {
   const priceWithoutTaxes = (cartTotalPrice / 1.2).toFixed(2);
   const taxAmount = (cartTotalPrice - priceWithoutTaxes).toFixed(2);
   return (
-    <div>
+    <div className="flex align-center justify-center ">
       <Head>
         <title>三刀流 || Checkout Page</title>
         <meta
@@ -50,43 +49,40 @@ export default async function Checkout() {
         />
       </Head>
 
-      <div className={style.checkoutContainer}>
-        <p>Price without Tax: {priceWithoutTaxes} €</p>
-        <p>Tax: {taxAmount} €</p>
-        <p>Total price: {cartTotalPrice} €</p>
+      <div className="card w-96 bg-base-100 shadow-xl p-4 m-10 glass my-24">
         <input
-          className={style.inputField}
+          className="input input-bordered input-primary w-full max-w-xs m-2"
           placeholder="first name"
           data-test-id="checkout-first-name"
           required
         />
         <input
-          className={style.inputField}
+          className="input input-bordered input-primary w-full max-w-xs m-2"
           placeholder="last name"
           data-test-id="checkout-last-name"
           required
         />
         <input
-          className={style.inputField}
+          className="input input-bordered input-primary w-full max-w-xs m-2"
           type="email"
           placeholder="e-mail"
           data-test-id="checkout-email"
           required
         />
         <input
-          className={style.inputField}
+          className="input input-bordered input-primary w-full max-w-xs m-2"
           placeholder="address"
           data-test-id="checkout-address"
           required
         />
         <input
-          className={style.inputField}
+          className="input input-bordered input-primary w-full max-w-xs m-2"
           placeholder="city"
           data-test-id="checkout-city"
           required
         />
         <input
-          className={style.inputField}
+          className="input input-bordered input-primary w-full max-w-xs m-2"
           type="number"
           placeholder="Postal Code"
           data-test-id="checkout-postal-code"
@@ -94,41 +90,46 @@ export default async function Checkout() {
           required
         />
         <input
-          className={style.inputField}
+          className="input input-bordered input-primary w-full max-w-xs m-2"
           placeholder="country"
           data-test-id="checkout-country"
           required
         />
+      </div>
+      <div className="card w-96 bg-base-100 shadow-xl p-4 m-10 glass my-24">
         <input
-          className={style.inputField}
-          type="date"
-          placeholder="expiration date"
-          data-test-id="checkout-credit-card"
-          required
-        />
-        <input
-          className={style.inputField}
+          className="input input-bordered input-accent w-full max-w-xs m-2"
           placeholder="credit card"
           data-test-id="checkout-expiration-date"
           type="number"
           required
         />
         <input
-          className={style.inputField}
+          className="input input-bordered input-accent w-full max-w-xs m-2"
+          type="date"
+          placeholder="expiration date"
+          data-test-id="checkout-credit-card"
+          required
+        />
+        <input
+          className="input input-bordered input-accent w-full max-w-xs m-2"
           placeholder="cvc"
           data-test-id="checkout-security-code"
           type="number"
           maxLength={3}
           required
         />
-        <Link href="/checkout/order">
-          <DeleteButton
-            data-test-id="checkout-confirm-order"
-            className={style.submitButton}
-          >
-            order now
-          </DeleteButton>
-        </Link>
+        <div className="card-body">
+          <p>Price without Tax: {priceWithoutTaxes} €</p>
+          <p>Tax: {taxAmount} €</p>
+          <p>Total price: {cartTotalPrice} €</p>
+
+          <Link href="/checkout/order">
+            <DeleteButton data-test-id="checkout-confirm-order">
+              order now
+            </DeleteButton>
+          </Link>
+        </div>
       </div>
     </div>
   );

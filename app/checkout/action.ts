@@ -3,5 +3,5 @@
 import { cookies } from 'next/headers';
 
 export async function deleteCookies() {
-  await cookies().delete('shirtQuantity');
+  await cookies().delete('cart');
 }

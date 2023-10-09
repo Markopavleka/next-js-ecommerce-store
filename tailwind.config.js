@@ -5,6 +5,11 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  theme: ['light', 'dark'],
-  plugins: [require('daisyui')],
+  theme: ['lemonade', 'dark'],
+  extend: {
+    backgroundImage: {
+      hero: "url('/Users/marko/projects/next.js-ecommerce-store/public/images/tokio.jpeg')",
+    },
+  },
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };

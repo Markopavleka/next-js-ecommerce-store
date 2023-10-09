@@ -8,10 +8,11 @@ export default function AddToCartButton(props) {
   const [quantity, setQuantity] = useState(1);
   return (
     <div>
-      <p>Quantity:</p>
+      <p className="card-text">Quantity:</p>
       <input
         type="number"
         min="1"
+        className="input input-bordered input-accent w-full max-w-xs my-4"
         value={quantity}
         onChange={(event) => {
           setQuantity(event.currentTarget.value);

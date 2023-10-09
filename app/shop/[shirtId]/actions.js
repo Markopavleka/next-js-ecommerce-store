@@ -10,7 +10,7 @@ import { parseJson } from '../../../public/util/json';
 
 export async function createOrUpdateItem(shirtId, quantity) {
   // 1. get the current cookie
-  const shirtItemCookie = getCookie('shirtQuantity');
+  const shirtItemCookie = getCookie('cart');
   // 2. parse the cookie value
 
   // !fruitsCommentsCookie <=> fruitsCommentsCookie === undefined
@@ -38,5 +38,5 @@ export async function createOrUpdateItem(shirtId, quantity) {
   }
 
   // 4. we override the cookie
-  await cookies().set('shirtQuantity', JSON.stringify(shirtsQuantity));
+  await cookies().set('cart', JSON.stringify(shirtsQuantity));
 }
