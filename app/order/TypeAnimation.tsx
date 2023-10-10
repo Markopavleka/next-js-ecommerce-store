@@ -29,6 +29,7 @@ export const TextAnimation = () => {
       speed={50}
       style={{ fontSize: '2em', display: 'inline-block' }}
       repeat={Infinity}
+      className="mb-5 text-5xl font-bold"
     />
   );
 };
