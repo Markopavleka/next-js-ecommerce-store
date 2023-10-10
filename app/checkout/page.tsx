@@ -56,7 +56,6 @@ export default async function Checkout() {
           content="Complete your order and provide shipping and payment information."
         />
       </Head>
-
       <div className="card w-96 bg-base-200 shadow-xl p-4 m-10 my-24 ">
         <input
           className="input input-bordered input-primary w-full max-w-xs m-2"
