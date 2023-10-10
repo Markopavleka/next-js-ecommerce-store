@@ -57,7 +57,7 @@ export default async function Cart() {
         {cartItemsWithQuantityGreaterThanOne.map((shirt) => {
           return (
             <div
-              className="card card-side bg-base-100 shadow-xl glass m-4"
+              className="card card-side bg-base-200 shadow-xl m-4"
               key={`shirt-${shirt.id}`}
             >
               <figure>
@@ -81,7 +81,7 @@ export default async function Cart() {
         })}
       </div>
       <div className="grid justify-center items-center my-24">
-        <div className="card w-96 bg-base-100 shadow-xl glass">
+        <div className="card w-96 bg-base-200 shadow-xl">
           <div className="card-body">
             <p>Price without Tax: {priceWithoutTaxes} €</p>
             <p>Tax: {taxAmount} €</p>

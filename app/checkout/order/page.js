@@ -3,16 +3,19 @@ import { TextAnimation } from './TypeAnimation';
 
 export default function page() {
   return (
-    <div
-      className="flex align-center justify-center "
-      style={{ height: '65vh' }}
-    >
+    <div>
       <Head>
         <title>三刀流 || Thank You for Your Order</title>
         <meta name="description" content="Thank you for placing your order." />
       </Head>
-
-      <TextAnimation className="card card-title  bg-base-100 shadow-xl p-4 m-10" />
+      <div className="hero min-h-screen thx-you-image">
+        <div className="hero-overlay bg-opacity-60" />
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md">
+            <TextAnimation className="mb-5 text-5xl font-bold" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

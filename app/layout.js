@@ -1,8 +1,7 @@
 import './globals.css';
-import './Component/colors.scss';
 import { Inter } from 'next/font/google';
-import FooterUi from './Component/FooterUi';
-import NavbarUi from './Component/NavbarUi';
+import Footer from './Component/Footer';
+import Navbar from './Component/Navbar';
 import { Providers } from './Component/Providers';
 
 // import styles from './page.module.scss';
@@ -19,11 +18,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          <NavbarUi />
+          <Navbar />
 
           <div>{children}</div>
 
-          <FooterUi />
+          <Footer />
         </Providers>
       </body>
     </html>

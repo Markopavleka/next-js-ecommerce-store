@@ -7,3 +7,8 @@
   background-size: cover;
   background-position: center;
 }
+.thx-you-image {
+  background-image: url('../public/images/newzealand.jpg');
+  background-size: cover;
+  background-position: center;
+}

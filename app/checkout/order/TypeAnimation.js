@@ -7,7 +7,23 @@ export const TextAnimation = () => {
       sequence={[
         // Same substring at the start will only be typed out once, initially
         'Thank you for your order!',
-        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        2000,
+        '注文していただきありがとうございます',
+        2000,
+        'Merci pour votre commande!',
+        2000,
+        '¡Gracias por su pedido!',
+        2000,
+        'Vielen Dank für Ihre Bestellung!',
+        2000,
+        'Grazie per il vostro ordine!',
+        2000,
+        '谢谢您的订单!',
+        2000,
+        'شكرًا على طلبك!',
+        2000,
+        'Спасибо за ваш заказ!',
+        2000,
       ]}
       wrapper="span"
       speed={50}

@@ -15,7 +15,7 @@ export default async function SingleShirtPage(props) {
           content={`Shop the ${singleShirt.description} shirt - Price: ${singleShirt.price} ${singleShirt.currency}`}
         />
       </Head>
-      <div className="card lg:card-side bg-base-100 shadow-xl glass">
+      <div className="card lg:card-side bg-base-200 shadow-xl ">
         <figure>
           <Image
             src={`/images/${singleShirt.name}.jpeg`}
