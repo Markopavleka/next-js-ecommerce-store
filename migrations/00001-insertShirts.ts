@@ -1,6 +1,6 @@
 import { Sql } from 'postgres';
 
-const shirts = [
+export const shirts = [
   {
     id: 1,
     name: 'miniLogoWhite',

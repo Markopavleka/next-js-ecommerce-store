@@ -48,7 +48,7 @@ export default async function Checkout() {
   const taxAmount = (cartTotalPrice - priceWithoutTaxes).toFixed(2);
 
   return (
-    <div className="grid align-center items-center">
+    <div>
       <Head>
         <title>三刀流 || Checkout Page</title>
         <meta
@@ -58,7 +58,8 @@ export default async function Checkout() {
       </Head>
 
       <Form />
-      <div className="card w-96 h-52 bg-base-200 shadow-xl p-4 m-10 ">
+
+      <div className="card w-96 bg-base-200 shadow-xl mx-auto p-4 my-4">
         <div className="card-body bg-base-200">
           <p>Price without Tax: {priceWithoutTaxes} €</p>
           <p>Tax: {taxAmount} €</p>
