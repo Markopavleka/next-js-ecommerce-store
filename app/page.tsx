@@ -3,6 +3,12 @@ import Link from 'next/link';
 import React from 'react';
 import { TextAnimationHero } from './Component/AnimationHeroMain';
 
+export const metadata = {
+  title: '三刀流 || Homepage',
+  description:
+    'Welcome to our website. Discover amazing products, services, and more.',
+};
+
 export default function Home() {
   return (
     <div>

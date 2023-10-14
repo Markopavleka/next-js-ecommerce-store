@@ -1,4 +1,10 @@
-import Head from 'next/head'; // Import the Head component
+import Head from 'next/head';
+
+export const metadata = {
+  title: '三刀流 || About',
+  description:
+    'Learn more about our company and our mission to serve our customers.',
+};
 
 export default function About() {
   return (

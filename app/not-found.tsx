@@ -1,5 +1,11 @@
 import Image from 'next/image';
 
+export const metadata = {
+  title: '三刀流 || Page not found',
+  description:
+    'Sorry this page was not found make sure you visit a page that exists.',
+};
+
 export default function RootNotFound() {
   return (
     <div className="grid justify-center items-center my-20">

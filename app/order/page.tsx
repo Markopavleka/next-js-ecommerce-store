@@ -1,6 +1,11 @@
 import Head from 'next/head';
 import { TextAnimation } from './TypeAnimation';
 
+export const metadata = {
+  title: '三刀流 || Thank You for Your Order',
+  description: 'Thank you for placing your order.',
+};
+
 export default function page() {
   return (
     <div>

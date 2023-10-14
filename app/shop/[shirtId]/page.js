@@ -3,6 +3,12 @@ import Image from 'next/image';
 import { getShirtById } from '../../../database/shirts';
 import AddToCartButton from './AddToCartButton';
 
+export const metadata = {
+  title: '三刀流 || Shop',
+  description:
+    'Explore our collection of shirts and find the perfect one for you.',
+};
+
 export default async function SingleShirtPage(props) {
   const singleShirt = await getShirtById(Number(props.params.shirtId));
 

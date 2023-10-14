@@ -11,6 +11,12 @@ type CartItems = {
   price: number;
 };
 
+export const metadata = {
+  title: '三刀流 || Shop',
+  description:
+    'Explore our collection of shirts and find the perfect one for you.',
+};
+
 export default async function Shop() {
   const shirts = await getShirts();
   const shirtItemCookie = getCookie('shirtQuantity');

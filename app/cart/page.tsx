@@ -11,6 +11,13 @@ type CartItems = {
   quantity: number;
   price: number;
 };
+
+export const metadata = {
+  title: '三刀流 || Cart',
+  description:
+    'Review and edit the items in your shopping cart before proceeding to checkout.',
+};
+
 export default async function Cart() {
   const cartItemsCookie = getCookie('cart');
   const cartItemQuantities = !cartItemsCookie ? [] : parseJson(cartItemsCookie);

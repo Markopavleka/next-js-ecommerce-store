@@ -15,6 +15,11 @@ type CartItems = {
   quantity: number;
   price: number;
 };
+export const metadata = {
+  title: '三刀流 || Checkout',
+  description:
+    'Complete your order and provide shipping and payment information.',
+};
 
 export default async function Checkout() {
   const cartItemsCookie = getCookie('cart');
