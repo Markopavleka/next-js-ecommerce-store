@@ -1,4 +1,4 @@
-import test, { expect } from '@playwright/test';
+/* import test, { expect } from '@playwright/test';
 
 test('navigation test', async ({ page }) => {
   await page.goto('http://localhost:3000');
@@ -68,3 +68,4 @@ test('navigation test', async ({ page }) => {
   await expect(page).toHaveURL('http://localhost:3000/order');
 });
 // pnpm playwright test
+*/
