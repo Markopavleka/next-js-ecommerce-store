@@ -4,8 +4,6 @@ import Footer from './Component/Footer';
 import Navbar from './Component/Navbar';
 import { Providers } from './Component/Providers';
 
-// import styles from './page.module.scss';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {

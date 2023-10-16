@@ -18,6 +18,10 @@ export default function Home() {
           name="Homepage"
           content="Welcome to our website. Discover amazing products, services, and more."
         />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon-apple-touch.png" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <div className="hero min-h-screen background-image">
         <div className="hero-overlay bg-opacity-60" />
