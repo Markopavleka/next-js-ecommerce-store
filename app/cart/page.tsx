@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getShirts } from '../../database/shirts';
-import { getCookie } from '../../public/util/cookies';
-import { parseJson } from '../../public/util/json';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 import DeleteButton from './DeleteButton';
 
 type CartItems = {

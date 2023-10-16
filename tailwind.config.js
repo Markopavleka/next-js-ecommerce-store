@@ -6,10 +6,6 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: ['lemonade', 'dark'],
-  extend: {
-    backgroundImage: {
-      hero: "url('/Users/marko/projects/next.js-ecommerce-store/public/images/tokio.jpeg')",
-    },
-  },
+  extend: {},
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };

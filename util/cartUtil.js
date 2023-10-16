@@ -1,4 +1,4 @@
-import { getShirts } from '../../database/shirts';
+import { getShirts } from '../database/shirts';
 import { getCookie } from './cookies';
 import { parseJson } from './json';
 

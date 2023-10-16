@@ -1,4 +1,4 @@
-import { setEnvironmentVariables } from './public/util/config.mjs';
+import { setEnvironmentVariables } from './util/config.mjs';
 
 setEnvironmentVariables();
 const options = {};

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getShirts } from '../../database/shirts';
-import { getCookie } from '../../public/util/cookies';
-import { parseJson } from '../../public/util/json';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 import DarkMode from './DarkMode';
 
 type CartItems = {

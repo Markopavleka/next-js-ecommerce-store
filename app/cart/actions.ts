@@ -1,7 +1,7 @@
 'use server';
 import { cookies } from 'next/headers';
-import { getCookie } from '../../public/util/cookies';
-import { parseJson } from '../../public/util/json';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 
 type CartCookie = {
   id: number;

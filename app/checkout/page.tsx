@@ -5,8 +5,8 @@
 
 import Head from 'next/head';
 import { getShirts } from '../../database/shirts';
-import { getCookie } from '../../public/util/cookies';
-import { parseJson } from '../../public/util/json';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 // import DeleteButton from './DeleteButton';
 import Form from './Form';
 

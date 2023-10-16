@@ -1,4 +1,4 @@
-import { Shirts } from '../../migrations/00000-createTableShirts';
+import { Shirts } from '../migrations/00000-createTableShirts';
 
 export function getShirts(shirt: Shirts[]) {
   if (typeof shirt[0] === 'undefined') {
