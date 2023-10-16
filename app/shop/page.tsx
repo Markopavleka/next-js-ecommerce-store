@@ -55,7 +55,7 @@ export default async function Shop() {
               >
                 <figure>
                   <Image
-                    src={`/images/${shirt.name}.jpeg`}
+                    src={`/images/${shirt.name}.jpg`}
                     alt={shirt.description}
                     width={384}
                     height={226}

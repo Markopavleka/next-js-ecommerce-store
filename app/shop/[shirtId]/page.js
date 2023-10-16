@@ -24,7 +24,7 @@ export default async function SingleShirtPage(props) {
       <div className="card lg:card-side bg-base-200 shadow-xl ">
         <figure>
           <Image
-            src={`/images/${singleShirt.name}.jpeg`}
+            src={`/images/${singleShirt.name}.jpg`}
             alt={singleShirt.description}
             width={384}
             height={226}

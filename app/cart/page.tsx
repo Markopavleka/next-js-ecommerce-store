@@ -69,7 +69,7 @@ export default async function Cart() {
             >
               <figure>
                 <Image
-                  src={`/images/${shirt.name}.jpeg`}
+                  src={`/images/${shirt.name}.jpg`}
                   alt={shirt.description}
                   width={192}
                   height={113}
