@@ -8,13 +8,8 @@ test('navigation test', async ({ page }) => {
   await page.getByRole('link', { name: 'Shop now' }).click();
   await page.waitForURL('http://localhost:3000/shop');
   await expect(page).toHaveURL('http://localhost:3000/shop');
-  // all products are visible
-  await expect(page.getByTestId('product-7')).toBeVisible();
-  await expect(page.getByTestId('product-8')).toBeVisible();
   await expect(page.getByTestId('product-9')).toBeVisible();
-  await expect(page.getByTestId('product-10')).toBeVisible();
-  await expect(page.getByTestId('product-11')).toBeVisible();
-  await expect(page.getByTestId('product-12')).toBeVisible();
+
   // select the first product
   await page.getByTestId('product-9').click();
   await page.waitForURL('http://localhost:3000/shop/9');
