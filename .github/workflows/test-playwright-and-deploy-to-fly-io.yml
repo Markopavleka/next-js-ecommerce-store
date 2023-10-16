@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest # or macos-latest, windows-latest
     # Update env variables with your own database credentials
     env:
-      PGHOST: localhost:5432
+      PGHOST: localhost
       PGDATABASE: shirts
       PGUSERNAME: shirts
       PGPASSWORD: shirts
