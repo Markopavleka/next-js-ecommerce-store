@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simple web application for e-commerce. Users can browse and buy products, manage their shopping cart, and proceed to checkout.
+This is a simple web application for a fake e-commerce. Users can browse and buy products, manage their shopping cart, and proceed to checkout.
 
 ## Technologies Used
 
