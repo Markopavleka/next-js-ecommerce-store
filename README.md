@@ -38,22 +38,22 @@ To set up this project locally with `pnpm`, follow these steps:
 
 1. Navigate to the project directory:
 
-bash
+```bash
 Copy code
 cd ecommerce
-
+```
 2. Install pnpm globally (if not already installed):
 
-bash
+```bash
 Copy code
 npm install -g pnpm
-
+```
 3. Install project dependencies with pnpm:
 
-bash
+```bash
 Copy code
 pnpm install
-
+```
 4. Set up the database by downloading and installing PostgreSQL.
 
 5. Create a user and a database in PostgreSQL.
@@ -66,22 +66,22 @@ pnpm install
 
 9. Install dotenv-cli with pnpm:
 
-bash
+```bash
 Copy code
 pnpm install dotenv-cli
-
+```
 10. Run the migrations(2x) with pnpm:
 
-bash
+```bash
 Copy code
 pnpm migrate up
-
+```
 11. Start the server by running:
 
-bash
+```bash
 Copy code
 pnpm dev
-
+```
 The project will be available at http://localhost:3000.
 
 ## Deployment
