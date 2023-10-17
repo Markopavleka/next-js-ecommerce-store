@@ -8,11 +8,11 @@ test('navigation test', async ({ page }) => {
   await page.getByRole('link', { name: 'Shop now' }).click();
   await page.waitForURL('http://localhost:3000/shop');
   await expect(page).toHaveURL('http://localhost:3000/shop');
-  await expect(page.getByTestId('product-9')).toBeVisible();
+  await expect(page.getByTestId('product-3')).toBeVisible();
   // select the first product
-  await page.getByTestId('product-9').click();
-  await page.waitForURL('http://localhost:3000/shop/9');
-  await expect(page).toHaveURL('http://localhost:3000/shop/9');
+  await page.getByTestId('product-3').click();
+  await page.waitForURL('http://localhost:3000/shop/3');
+  await expect(page).toHaveURL('http://localhost:3000/shop/3');
   await expect(page.getByRole('spinbutton')).toBeVisible();
   await expect(page.getByRole('spinbutton')).toHaveCount(1);
   await page.getByRole('spinbutton').fill('4');
@@ -25,9 +25,9 @@ test('navigation test', async ({ page }) => {
   await page.waitForURL('http://localhost:3000/shop');
   await expect(page).toHaveURL('http://localhost:3000/shop');
   // select the second product
-  await page.getByTestId('product-11').click();
-  await page.waitForURL('http://localhost:3000/shop/11');
-  await expect(page).toHaveURL('http://localhost:3000/shop/11');
+  await page.getByTestId('product-1').click();
+  await page.waitForURL('http://localhost:3000/shop/1');
+  await expect(page).toHaveURL('http://localhost:3000/shop/1');
   await page.getByRole('button', { name: 'Add to Cart' }).click();
   // go to cart
   await page.getByRole('button', { name: '5' }).click();
@@ -37,14 +37,12 @@ test('navigation test', async ({ page }) => {
   // remove one product
   await page.getByTestId('cart-product-remove-<product id>').first().click();
   await expect(
-    page.getByText(
-      'Mini Logo PurpleQuantity: 4Price: 40€Subtotal: 160 €Remove',
-    ),
+    page.getByText('Mini Logo WhiteQuantity: 1Price: 48€Subtotal: 48 €Remove'),
   ).toBeHidden();
   // see if price is visible
-  await expect(page.getByText('Price without Tax: 29.17 €')).toBeVisible();
-  await expect(page.getByText('Tax: 5.83 €')).toBeVisible();
-  await expect(page.getByText('Total price: 35 €')).toBeVisible();
+  await expect(page.getByText('Price without Tax: 133.33 €')).toBeVisible();
+  await expect(page.getByText('Tax: 26.67 €')).toBeVisible();
+  await expect(page.getByText('Total price: 160 €')).toBeVisible();
 
   // checkout process
   await page.getByRole('link', { name: 'Checkout' }).click();
