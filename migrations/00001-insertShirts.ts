@@ -33,7 +33,7 @@ export const shirts = [
   },
   {
     id: 6,
-    name: 'LogoPurple',
+    name: 'logoPurple',
     description: 'Logo Purple',
     price: 30,
   },
