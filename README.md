@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simple web application for e-commerce. Users can browse and buy products, manage their shopping cart, and proceed to checkout.
+This is a simple web application for a fake e-commerce. Users can browse and buy products, manage their shopping cart, and proceed to checkout.
 
 ## Technologies Used
 
@@ -38,22 +38,19 @@ To set up this project locally with `pnpm`, follow these steps:
 
 1. Navigate to the project directory:
 
-bash
-Copy code
+```bash
 cd ecommerce
-
+```
 2. Install pnpm globally (if not already installed):
 
-bash
-Copy code
+```bash
 npm install -g pnpm
-
+```
 3. Install project dependencies with pnpm:
 
-bash
-Copy code
+```bash
 pnpm install
-
+```
 4. Set up the database by downloading and installing PostgreSQL.
 
 5. Create a user and a database in PostgreSQL.
@@ -64,24 +61,21 @@ pnpm install
 
 8. Replace the placeholders in .env with your PostgreSQL credentials.
 
-9. Install dotenv-cli with pnpm:
+9. Install ley with pnpm:
 
-bash
-Copy code
-pnpm install dotenv-cli
-
+```bash
+pnpm install --save-dev ley
+```
 10. Run the migrations(2x) with pnpm:
 
-bash
-Copy code
+```bash
 pnpm migrate up
-
+```
 11. Start the server by running:
 
-bash
-Copy code
+```bash
 pnpm dev
-
+```
 The project will be available at http://localhost:3000.
 
 ## Deployment
